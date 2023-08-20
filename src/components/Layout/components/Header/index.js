@@ -10,32 +10,32 @@ import { faCircleQuestion, faCircleXmark } from '@fortawesome/free-regular-svg-i
 import {
     faSpinner,
     faMagnifyingGlass,
-    faSignIn,
     faEllipsisVertical,
-    faEarthAsia,
     faKeyboard,
-    faFileCircleQuestion,
-    faUpload,
-    faCloudArrowUp,
-    faMessage,
-    faUser,
-    faSave,
-    faCoins,
-    faHeart,
-    faGears,
     faSignOut,
+    faCloudArrowUp,
 } from '@fortawesome/free-solid-svg-icons';
 import HeadlessTippy from '@tippyjs/react/headless';
 import { useEffect, useState } from 'react';
 import AccountItem from '~/components/AccountItem';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import {
+    CoinsIcon,
+    FavoriteIcon,
+    InboxIcon,
+    InforIcon,
+    LanguageIcon,
+    MessageIcon,
+    SettingIcon,
+} from '~/components/Icon';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
     {
-        icon: <FontAwesomeIcon icon={faEarthAsia} />,
+        icon: <LanguageIcon />,
         title: 'Tiếng Việt',
         children: {
             title: 'Language',
@@ -84,22 +84,22 @@ function Header() {
 
     const userMenu = [
         {
-            icon: <FontAwesomeIcon icon={faUser} />,
+            icon: <InforIcon />,
             title: 'Xem hồ sơ',
             to: '/@quangg',
         },
         {
-            icon: <FontAwesomeIcon icon={faHeart} />,
+            icon: <FavoriteIcon />,
             title: 'Yêu thích',
             to: '/favorite',
         },
         {
-            icon: <FontAwesomeIcon icon={faCoins} />,
+            icon: <CoinsIcon />,
             title: 'Nhận xu',
             to: '/coins',
         },
         {
-            icon: <FontAwesomeIcon icon={faGears} />,
+            icon: <SettingIcon />,
             title: 'Cài đặt',
             to: '/settings',
         },
@@ -147,15 +147,23 @@ function Header() {
                 <div className={cx('action')}>
                     {currentUser ? (
                         <>
-                            <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
+                            <Tippy content="Tải lên" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudArrowUp}></FontAwesomeIcon>
+                                    <FontAwesomeIcon icon={faCloudArrowUp} />
                                 </button>
                             </Tippy>
 
-                            <button className={cx('action-btn')}>
-                                <FontAwesomeIcon icon={faMessage}></FontAwesomeIcon>
-                            </button>
+                            <Tippy content="Tin nhắn" placement="bottom">
+                                <button className={cx('action-btn')}>
+                                    <InboxIcon />
+                                </button>
+                            </Tippy>
+
+                            <Tippy content="Hộp thư" placement="bottom">
+                                <button className={cx('action-btn')}>
+                                    <MessageIcon />
+                                </button>
+                            </Tippy>
                         </>
                     ) : (
                         <>
@@ -165,8 +173,8 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
-                                src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/0f71f7faf4019c041e7c244ede4d797a~c5_100x100.jpeg?x-expires=1692658800&x-signature=sHWsDSFeZq32mw3oStDAIpcE6RY%3D"
+                            <Image
+                                src="https://p16-sign-va.tidktokcdn.com/tos-maliva-avt-0068/0f71f7faf4019c041e7c244ede4d797a~c5_100x100.jpeg?x-expires=1692658800&x-signature=sHWsDSFeZq32mw3oStDAIpcE6RY%3D"
                                 className={cx('user-avatar')}
                                 alt="ABC"
                             />
