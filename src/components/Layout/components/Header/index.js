@@ -6,6 +6,7 @@ import image from '~/assets/images';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleQuestion } from '@fortawesome/free-regular-svg-icons';
 import { faEllipsisVertical, faKeyboard, faSignOut, faCloudArrowUp } from '@fortawesome/free-solid-svg-icons';
+import routesConfig from '~/config/routes';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import {
@@ -19,6 +20,7 @@ import {
 } from '~/components/Icon';
 import Image from '~/components/Image';
 import Search from '../Search';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -98,7 +100,9 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
-                    <img src={image.logo} alt="Tiktok" />
+                    <Link to={routesConfig.home} className={cx('logo-link')}>
+                        <img src={image.logo} alt="Tiktok" />
+                    </Link>
                 </div>
 
                 <Search />
@@ -133,7 +137,7 @@ function Header() {
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
                             <Image
-                                src="https://p16-sign-va.tidktokcdn.com/tos-maliva-avt-0068/0f71f7faf4019c041e7c244ede4d797a~c5_100x100.jpeg?x-expires=1692658800&x-signature=sHWsDSFeZq32mw3oStDAIpcE6RY%3D"
+                                src="https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-giso/66b9f5ca1b7bf7f73c3b2823e630331b~c5_100x100.jpeg?x-expires=1693652400&x-signature=sTev2I0XZi29B41y38GdsNok1g8%3D"
                                 className={cx('user-avatar')}
                                 alt="ABC"
                             />

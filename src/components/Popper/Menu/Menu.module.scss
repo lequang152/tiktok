@@ -8,6 +8,15 @@
 
 .menu-popper {
     padding-bottom: 8px;
+    max-height: 560px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 16px;
+}
+
+.menu-body {
+    overflow-y: auto;
 }
 
 .menu-item {
@@ -32,6 +41,7 @@
     position: relative;
     height: 50px;
     background-color: var(--white);
+    flex-shrink: 0;
 }
 
 .back-btn {
