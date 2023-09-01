@@ -6,7 +6,7 @@ import image from '~/assets/images';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleQuestion } from '@fortawesome/free-regular-svg-icons';
 import { faEllipsisVertical, faKeyboard, faSignOut, faCloudArrowUp } from '@fortawesome/free-solid-svg-icons';
-import routesConfig from '~/config/routes';
+import config from '~/config';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import {
@@ -100,7 +100,7 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
-                    <Link to={routesConfig.home} className={cx('logo-link')}>
+                    <Link to={config.routes.home} className={cx('logo-link')}>
                         <img src={image.logo} alt="Tiktok" />
                     </Link>
                 </div>

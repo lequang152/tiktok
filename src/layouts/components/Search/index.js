@@ -8,7 +8,7 @@ import { SearchIcon, ClearText } from '~/components/Icon';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { useDebounce } from '~/hooks';
-import * as searchService from '~/apiService/searchService';
+import * as searchService from '~/services/searchService';
 
 const cx = classNames.bind(styles);
 
