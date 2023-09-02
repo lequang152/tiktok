@@ -12,6 +12,7 @@ import {
     ComPassIcon,
     ComPassActiveIcon,
 } from '~/components/Icon';
+import SuggestAccounts from '~/components/SuggestAccounts/SuggestAccounts';
 
 const cx = classNames.bind(styles);
 
@@ -41,6 +42,8 @@ function Sidebar() {
 
                 <MenuItem title="LIVE" to={config.routes.live} icon={<LiveIcon />} activeIcon={<LiveActiveIcon />} />
             </Menu>
+            <SuggestAccounts label="Tài khoản đề xuất" />
+            <SuggestAccounts label="Đang follow" />
         </aside>
     );
 }
